@@ -4,8 +4,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-    color =os.environ('COLOR')
-    return "Welcome! + color"
+    color = os.environ.get('COLOR') 
+    message = "Welcome !!! This is "+color+" environment" 
+    return message
 
 @app.route('/how are you')
 def hello():
