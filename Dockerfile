@@ -1,7 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTANER Your Name "nikhilkumar435@gmail.com"
-
+ENV COLOR "red"
 RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
 
