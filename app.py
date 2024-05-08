@@ -2,6 +2,8 @@ import os
 from flask import Flask
 from flask import jsonify
 from flask import request
+from werkzeug.middleware.proxy_fix import ProxyFix
+
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app)
 
