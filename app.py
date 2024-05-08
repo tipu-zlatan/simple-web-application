@@ -30,4 +30,4 @@ def get_my_ip():
    # return str(request.access_route)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080) #, ssl_context='adhoc'
+    app.run(host="0.0.0.0", port=8080, ssl_context='adhoc') #, ssl_context='adhoc'
