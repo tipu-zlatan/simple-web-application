@@ -20,9 +20,9 @@ def hello():
 @app.route("/get_my_ip", methods=["GET"])
 def get_my_ip():
     if request.headers.getlist("X-Forwarded-For"):
-       ip = request.headers.getlist("X-Forwarded-For")[0]
+        ip = request.headers.getlist("X-Forwarded-For")[0]
     else:
-      ip = request.remote_addr
+        ip = request.remote_addr
  #   return str(request.headers)
   #  request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
     return jsonify({'ip': ip}), 200
