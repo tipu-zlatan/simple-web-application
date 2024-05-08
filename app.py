@@ -25,7 +25,7 @@ def get_my_ip():
         ip = request.remote_addr
  #   return str(request.headers)
   #  request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
-    return jsonify({'ip': 'apples'}), 200
+    return 'hi'
 #    return str(request.environ)
    # return str(request.access_route)
 
