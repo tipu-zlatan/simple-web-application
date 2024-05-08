@@ -16,11 +16,11 @@ def hello():
 
 @app.route("/get_my_ip", methods=["GET"])
 def get_my_ip():
-    if request.headers.getlist("X-Forwarded-For"):
-       ip = request.headers.getlist("X-Forwarded-For")[0]
-    else:
-       ip = request.remote_addr
-    return jsonify({'ip': ip}), 200
+#    if request.headers.getlist("X-Forwarded-For"):
+#       ip = request.headers.getlist("X-Forwarded-For")[0]
+#    else:
+#      ip = request.remote_addr
+    return request.headers
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, ssl_context='adhoc')
