@@ -20,7 +20,9 @@ def get_my_ip():
 #       ip = request.headers.getlist("X-Forwarded-For")[0]
 #    else:
 #      ip = request.remote_addr
-    return str(request.headers)
+ #   return str(request.headers)
+    request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+    return jsonify({'ip': request.remote_addr}), 200
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, ssl_context='adhoc')
