@@ -19,14 +19,14 @@ def hello():
 
 @app.route("/get_my_ip", methods=["GET"])
 def get_my_ip():
-#    if request.headers.getlist("X-Forwarded-For"):
-#       ip = request.headers.getlist("X-Forwarded-For")[0]
-#    else:
-#      ip = request.remote_addr
+    if request.headers.getlist("X-Forwarded-For"):
+       ip = request.headers.getlist("X-Forwarded-For")[0]
+    else:
+      ip = request.remote_addr
  #   return str(request.headers)
-    request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
-#    return jsonify({'ip': request.remote_addr}), 200
-    return str(request.environ)
+  #  request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+    return jsonify({'ip': ip}), 200
+#    return str(request.environ)
    # return str(request.access_route)
 
 if __name__ == "__main__":
