@@ -26,8 +26,8 @@ def get_my_ip():
  #   return str(request.headers)
     request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
 #    return jsonify({'ip': request.remote_addr}), 200
-   # return str(request.environ)
-    return str(request.access_route)
+    return str(request.environ)
+   # return str(request.access_route)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, ssl_context='adhoc')
+    app.run(host="0.0.0.0", port=8080) #ssl_context='adhoc'
